@@ -1,9 +1,11 @@
 # OpenDMARC-Reports
 
-Automating OpenDMARC reports securely using SystemD units. This example is tested on Debian 11.
+Automating OpenDMARC reports securely using SystemD units.
 
 The instructions on [OpenDMARC/reports/README][1] are a bit open and suggest using cron jobs.
 The risk with this approach is passing credentials as command line arguments, which is not secure.
+
+*This example is tested on Debian 11 & Ubuntu 20.04.*
 
 ## Prerequisites
 
