@@ -1,0 +1,10 @@
+# /etc/systemd/system/dmarc-report.timer
+[Unit]
+Description=Timer for sending DMARC reports
+
+[Timer]
+Unit=dmarc-report.service
+OnCalendar=*-*-* 21:45:00
+
+[Install]
+WantedBy=timers.target

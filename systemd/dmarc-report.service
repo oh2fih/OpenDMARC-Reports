@@ -1,0 +1,11 @@
+# /etc/systemd/system/dmarc-report.service
+[Unit]
+Description=Send DMARC reports
+
+[Service]
+Type=oneshot
+WorkingDirectory=/var/run/opendmarc
+EnvironmentFile=/etc/opendmarc.private.env
+ExecStart=/usr/local/bin/dmarc-report.sh
+User=opendmarc
+Group=opendmarc
