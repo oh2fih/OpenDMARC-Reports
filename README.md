@@ -23,5 +23,7 @@ The risk with this approach is passing credentials as command line arguments, wh
 1. Run `sudo ./install.sh` on the root directory of this repository.
 1. Complete the setup by editing the installed `opendmarc.private.env`.
 
+The [`uninstall.sh`](uninstall.sh) helps reversing the changes made by the installation script in the correct order.
+
 [1]: https://github.com/trusteddomainproject/OpenDMARC/blob/master/reports/README
 [1]: https://github.com/trusteddomainproject/OpenDMARC/blob/master/db/schema.mysql
