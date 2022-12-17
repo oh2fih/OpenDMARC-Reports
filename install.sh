@@ -88,11 +88,31 @@ chmod 644 "${UNIT_DST}/dmarc-report.timer"
 echo -e "\033[0;32mDone.\033[0m"
 
 echo
-echo "Installing private configuration to ${ENV_DST}/opendmarc.private.env"
-cp "etc/opendmarc.private.env" "${ENV_DST}/opendmarc.private.env"
-chown root:root "${ENV_DST}/opendmarc.private.env"
-chmod 600 "${ENV_DST}/opendmarc.private.env"
-echo -e "\033[0;32mDone.\033[0m"
+INSTALL_ENV=true
+if [[ -f "${ENV_DST}/opendmarc.private.env" ]]; then
+  echo
+  read -r -n1 -p "Configuration already found; overwrite? [y/N]: " resp
+  echo
+  case "$resp" in
+    [yY])
+      INSTALL_ENV=true
+      ;;
+    *)
+      INSTALL_ENV=false
+      echo "Keeping the current configuration ${ENV_DST}/opendmarc.private.env"
+      echo "Ensuring secure private configuration file permissions"
+      chown root:root "${ENV_DST}/opendmarc.private.env"
+      chmod 600 "${ENV_DST}/opendmarc.private.env"
+  esac
+fi
+
+if $INSTALL_ENV; then
+  echo "Installing private configuration to ${ENV_DST}/opendmarc.private.env"
+  cp "etc/opendmarc.private.env" "${ENV_DST}/opendmarc.private.env"
+  chown root:root "${ENV_DST}/opendmarc.private.env"
+  chmod 600 "${ENV_DST}/opendmarc.private.env"
+  echo -e "\033[0;32mDone.\033[0m"
+fi
 
 echo
 echo "Reloading SystemD units"
