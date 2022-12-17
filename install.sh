@@ -134,4 +134,9 @@ echo
 systemctl status dmarc-report.timer
 echo
 echo -e "\033[0;32mInstallation successful.\033[0m"
-echo "Complete setup by editing ${ENV_DST}/opendmarc.private.env"
+
+if $INSTALL_ENV; then
+  echo "Complete setup by editing ${ENV_DST}/opendmarc.private.env"
+else
+  echo "Please revise your configuration in ${ENV_DST}/opendmarc.private.env"
+fi
