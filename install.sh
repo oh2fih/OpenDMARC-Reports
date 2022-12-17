@@ -103,6 +103,7 @@ if [[ -f "${ENV_DST}/opendmarc.private.env" ]]; then
       echo "Ensuring secure private configuration file permissions"
       chown root:root "${ENV_DST}/opendmarc.private.env"
       chmod 600 "${ENV_DST}/opendmarc.private.env"
+      echo -e "\033[0;32mDone.\033[0m"
   esac
 fi
 
