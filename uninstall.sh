@@ -21,7 +21,7 @@ echo "Uninstalling OpenDMARC-Reports script, systemd service & timer"
 TIMER="${UNIT_DST}/dmarc-report.timer"
 if [[ -f "${TIMER}" ]]; then
   echo
-  read -r -n1 -p "${TIMER} found; remove [y/N]: " resp
+  read -r -n1 -p "${TIMER} found; remove? [y/N]: " resp
   echo
   case "$resp" in
     [yY])
@@ -43,7 +43,7 @@ fi
 SERVICE="${UNIT_DST}/dmarc-report.service"
 if [[ -f "${SERVICE}" ]]; then
   echo
-  read -r -n1 -p "${SERVICE} found; remove [y/N]: " resp
+  read -r -n1 -p "${SERVICE} found; remove? [y/N]: " resp
   echo
   case "$resp" in
     [yY])
@@ -65,7 +65,7 @@ fi
 SCRIPT="${SCRIPT_DST}/dmarc-report.sh"
 if [[ -f "${SCRIPT}" ]]; then
   echo
-  read -r -n1 -p "${SCRIPT} found; remove [y/N]: " resp
+  read -r -n1 -p "${SCRIPT} found; remove? [y/N]: " resp
   echo
   case "$resp" in
     [yY])
@@ -83,7 +83,7 @@ fi
 ENV_FILE="${ENV_DST}/opendmarc.private.env"
 if [[ -f "${ENV_FILE}" ]]; then
   echo
-  read -r -n1 -p "${ENV_FILE} found; remove [y/N]: " resp
+  read -r -n1 -p "${ENV_FILE} found; remove? [y/N]: " resp
   echo
   case "$resp" in
     [yY])
