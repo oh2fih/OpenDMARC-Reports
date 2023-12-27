@@ -1,10 +1,10 @@
 #!/bin/bash
-# -----------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Install OpenDMARC-Reports script, systemd service & timer
 #
 # Author : Esa Jokinen (oh2fih)
 # Home   : https://github.com/oh2fih/OpenDMARC-Reports
-# -----------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 # Destination directories
 SCRIPT_DST=/usr/local/bin

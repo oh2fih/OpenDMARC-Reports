@@ -1,13 +1,12 @@
 #!/bin/bash
-# -----------------------------------------------------------
-# Automation script for sending DMARC reports generated from
-# the data collected by OpenDMARC. Designed to be executed
-# using SystemD unit & timer. Also remember to pass sensitive
-# environment variables like $OPENDMARC_PASSWORD securely!
+# ------------------------------------------------------------------------------
+# Automation script for sending DMARC reports generated from the data collected
+# by OpenDMARC. Designed to be executed using SystemD unit & timer. Remember to 
+# pass sensitive environment variables like $OPENDMARC_PASSWORD securely!
 #
 # Author : Esa Jokinen (oh2fih)
 # Home   : https://github.com/oh2fih/OpenDMARC-Reports
-# -----------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 required_command() {
   if ! command -v "$1" &> /dev/null; then
