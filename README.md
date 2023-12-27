@@ -2,6 +2,8 @@
 
 Automating OpenDMARC reports securely using SystemD units.
 
+![ShellCheck](https://github.com/oh2fih/opendmarc-reports/workflows/ShellCheck/badge.svg)
+
 The instructions on [OpenDMARC/reports/README][1] are a bit open and suggest using cron jobs.
 The risk with this approach is passing credentials as command line arguments, which is not secure.
 
